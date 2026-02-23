@@ -1,5 +1,10 @@
 # lifesuspend
 
+[![Platform](https://img.shields.io/badge/platform-Arch%20Linux-1793D1?logo=arch-linux&logoColor=white)](https://archlinux.org)
+[![Compositor](https://img.shields.io/badge/compositor-Hyprland-58E1FF)](https://hyprland.org)
+[![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
+[![Wayland](https://img.shields.io/badge/display-Wayland-6D4AFF)](https://wayland.freedesktop.org)
+
 `lifesuspend` es un repo standalone para Arch + Hyprland que agrega una pantalla de inactividad con overlay translucido y simulacion de Conway's Game of Life.
 
 ## Features
@@ -13,6 +18,19 @@
   - resume: ocultar overlay.
   - 300s: ejecutar lock (`hyprlock`).
 - Instalacion automatica con `install.sh` (deps + systemd user units).
+
+## Quick Install
+
+```bash
+git clone https://github.com/<tu-usuario>/lifesuspend.git && cd lifesuspend && bash install.sh
+```
+
+Comprobacion rapida:
+
+```bash
+systemctl --user status lifesuspend-daemon.service lifesuspend-idle.service
+lifesuspendctl preview --seconds 5
+```
 
 ## Estructura
 

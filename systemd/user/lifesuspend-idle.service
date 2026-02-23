@@ -1,0 +1,17 @@
+[Unit]
+Description=lifesuspend idle integration (hypridle)
+After=lifesuspend-daemon.service graphical-session.target
+Wants=lifesuspend-daemon.service
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+Environment=XDG_RUNTIME_DIR=%t
+Environment=HOME=%h
+Environment=XDG_CONFIG_HOME=%h/.config
+ExecStart=/usr/bin/env hypridle
+Restart=on-failure
+RestartSec=1
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,18 @@
+[idle]
+screensaver_timeout_sec = 10
+lock_timeout_sec = 300
+
+[visual]
+overlay_opacity = 0.72
+cell_size_px = 6
+fps = 30
+seed_style = "mixed"
+
+[simulation]
+step_hz = 12
+max_alive_cells = 90000
+spawn_pattern_every_sec = 2
+
+[lock]
+command = "hyprlock"
+fallback_command = "loginctl lock-session"

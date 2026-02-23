@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lifesuspend"
+version = "0.1.0"
+description = "Pantalla de suspension para Hyprland con overlay Game of Life"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "tembleke" }]
+keywords = ["hyprland", "wayland", "screensaver", "game-of-life"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: POSIX :: Linux",
+]
+
+[project.scripts]
+lifesuspendd = "lifesuspend.daemon:main"
+lifesuspendctl = "lifesuspend.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]

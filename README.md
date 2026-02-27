@@ -141,7 +141,9 @@ journalctl --user -u lifesuspend-daemon.service -f
 ## Testing
 
 ```bash
-python3 -m unittest discover -s tests -v
+make test
+# o directamente
+PYTHONPATH=src python3 -m unittest discover -s tests -v
 ```
 
 Pruebas manuales recomendadas:
